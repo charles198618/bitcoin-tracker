@@ -30,4 +30,4 @@ function retrievePrice() {
 console.log("Updated price")
 }
 
-setInterval(retrievePrice, 5000);
+setInterval(retrievePrice, 1000);
