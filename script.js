@@ -1,9 +1,9 @@
-// We use this URL to retieve data from block chain API
+// We use this URL to retrieve data from block chain API.
 
 // I declare my url
 const url = "https://blockchain.info/ticker";
 
-// I create a request with JS,
+// I create a request with JS.
 let request = new XMLHttpRequest(); // Create an object
 request.open("GET", url); // open a new request that will use url to access API
 request.responseType = "json"; // I want the date to be in Json format
@@ -13,10 +13,14 @@ request.send(); // I send my request
 request.onload = function () {
   if (request.readyState === XMLHttpRequest.DONE) {
     if (request.status === 200) {
-      let storeResponse = request.response; // Store the response
-      console.log(storeResponse);
+      let storeResponse = request.response; // Store a response
+      let DollarResponse = storeResponse.USD.last; // If I want a specific data from US bitcoin, to know the last price of bitcoin
+      let sellResponse = storeResponse.USD.sell; // If I want a specific data from US bitcoin, to know the selling price of bitcoin
+      console.log(storeResponse); 
+      console.log(DollarResponse);
+      console.log(sellResponse); 
     } else {
-      alert("Un problème est intervenu, merci de revenir plus tard.");
+      alert("An error occured! Come back later!");
     }
   }
 };
