@@ -19,6 +19,7 @@ request.onload = function () {
       console.log(storeResponse); 
       console.log(DollarResponse);
       console.log(sellResponse); 
+      document.querySelector('#price_label').textContent = DollarResponse;  // To output US dollar data on the webpage
     } else {
       alert("An error occured! Come back later!");
     }
